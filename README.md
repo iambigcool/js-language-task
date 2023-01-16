@@ -1,1 +1,1 @@
-# js-language-task
+# The JavaScript Language Task Answers
