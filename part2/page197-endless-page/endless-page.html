@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Scroll me</h1>
+
+  <script>
+    function scroll() {
+      while(true) {
+        let windowBottom = document.documentElement.getBoundingClientRect().bottom;
+        if (windowBottom > document.documentElement.clientHeight + 100) break;
+
+        const box = document.createElement("p"); // another answer is: document.body.insertAdjacentHTML("beforeend", `<p>Date: ${new Date()}</p>`);
+        box.innerHTML = `Date: ${new Date()}`;
+        document.body.appendChild(box);
+      }
+    }
+
+    window.addEventListener('scroll', scroll);
+    scroll();
+  </script>
+</body>
+</html>
